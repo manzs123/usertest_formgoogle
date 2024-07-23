@@ -17,27 +17,22 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            // Define the correct password
+            
             const correctPassword = "password123";
 
-            // Function to prompt for the password
             function promptForPassword() {
                 const inputPassword = prompt("Enter the password to access the page:");
 
                 if (inputPassword === correctPassword) {
-                    // Unlock the page if the correct password is entered
                     document.body.className = "unlocked";
                 } else {
-                    // Keep the page locked and prompt again
                     alert("Incorrect password. Please try again.");
                     promptForPassword();
                 }
             }
 
-            // Lock the page initially
             document.body.className = "locked";
 
-            // Prompt for the password
             promptForPassword();
         });
     </script>

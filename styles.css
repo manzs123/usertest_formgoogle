@@ -32,8 +32,8 @@ body{
 }
 
 body.locked {
-    display: none; /* Hide the content until the correct password is entered */
+    display: none;
 }
 body.unlocked {
-    display: block; /* Show the content after the correct password is entered */
+    display: block; 
 }
