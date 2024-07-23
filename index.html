@@ -5,7 +5,7 @@
     <link href="./styles.css" rel="stylesheet">
 </head>
 
-<body>
+<body class="locked">
     <section class="main-wrap">
         <div class="figma-wrap">
             <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="100%" height="100%" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fdesign%2FzR9IMskGA7pZRtG6hCvvKN%2FUser-Test-Embed%3Fnode-id%3D0-1%26t%3DHXmpfSy1WLULesvi-1" allowfullscreen></iframe>
@@ -14,5 +14,32 @@
             <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdAuS0TZZaMoAoyHxziTr4IW-mVAHVEAUZGKHMnQ36TvOdppQ/viewform?embedded=true" width="100%" height="100%" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
         </div>
     </section>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Define the correct password
+            const correctPassword = "password123";
+
+            // Function to prompt for the password
+            function promptForPassword() {
+                const inputPassword = prompt("Enter the password to access the page:");
+
+                if (inputPassword === correctPassword) {
+                    // Unlock the page if the correct password is entered
+                    document.body.className = "unlocked";
+                } else {
+                    // Keep the page locked and prompt again
+                    alert("Incorrect password. Please try again.");
+                    promptForPassword();
+                }
+            }
+
+            // Lock the page initially
+            document.body.className = "locked";
+
+            // Prompt for the password
+            promptForPassword();
+        });
+    </script>
 </body>
 </html>
